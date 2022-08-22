@@ -1,0 +1,12 @@
+Bootstrap: library
+From: rockylinux:8/8.6
+
+%post
+    dnf update -y
+    dnf install -y epel-release
+    dnf groupinstall -y "Xfce" "base-x"
+
+%test
+    which xfwm4
+    which xfsettingsd
+    which xfce4-panel
